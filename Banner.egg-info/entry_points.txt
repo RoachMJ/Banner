@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = banner:main
+      [console_scripts]
+      initialize_Banner_db = banner.scripts.initializedb:main
+      
