@@ -8,7 +8,8 @@
     <meta name="author" content="Pylons Project">
     <link rel="shortcut icon" href="{{request.static_url('banner:static/pyramid-16x16.png')}}">
 
-    <title>Alchemy Scaffold for The Pyramid Web Framework</title>
+    <title>{% block subtitle %}{% endblock %}Pyramid tutorial wiki (based on TurboGears 20-Minute Wiki)</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -72,9 +73,9 @@
             <img class="logo img-responsive" src="{{request.static_url('banner:static/pyramid.png')}}" alt="pyramid web framework">
           </div>
           <div class="col-md-10">
-            {% block content %}
-                <p>No content</p>
-            {% endblock content %}
+            <div class="content">
+            {% block content %}{% endblock %}
+            </div>
           </div>
         </div>
         <div class="row">
