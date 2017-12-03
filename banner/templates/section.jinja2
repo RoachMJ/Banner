@@ -1,0 +1,31 @@
+{% extends 'layout.jinja2' %}
+{% block content %}
+<p>
+
+</p>
+<div>
+    <h1>Sections</h1>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for section in section %}
+                <tr>
+                    <td>{{section}}</td>
+{#                    <td>{{section}}</td>#}
+{#                    <td>{{section}}</td>#}
+                </tr>
+        {% endfor %}
+{#    <% end %>#}
+  </tbody>
+</table>
+<p><a href="{{request.route_url('create_section')}}">Create a Section</a></p>
+</div>
+
+</div>
+
+{% endblock content %}

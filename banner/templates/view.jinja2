@@ -1,18 +1,37 @@
 {% extends 'layout.jinja2' %}
 
-{% block subtitle %}{{page.name}} - {% endblock subtitle %}
+ {% block subtitle %}{{page.name}} - {% endblock subtitle %}
 
 {% block content %}
-<p>{{ content|safe }}</p>
+<p>{#{ content|safe }#}</p>
 <p>
 <a href="{{ edit_url }}">
-    Edit this page
+    Courses
 </a>
 </p>
 <p>
-    Viewing <strong>{{page.name}}</strong>, created by <strong>{{page.creator.name}}</strong>.
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+{#    <% @courses.each do |course| %>#}
+      <tr>
+        <td>{{ page.name }}</td>
+        <td> <!--<%= link_to 'Show', course %>--> </td>
+        <td><!--<%= link_to 'Edit', edit_course_path(course) %>--> </td>
+        <td><!--<%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %>--></td>
+      </tr>
+{#    <% end %>#}
+  </tbody>
+</table>
+{#    Viewing <strong>{{page.name}}</strong>, created by <strong>{{page.creator.name}}</strong>.#}
 </p>
-<p>You can return to the
-<a href="{{request.route_url('view_page', pagename='FrontPage')}}">FrontPage</a>.
+<p><!-- You can return to the-->
+{#<a href="{{request.route_url('view_page', pagename='FrontPage')}}">FrontPage</a>.#}
 </p>
 {% endblock content %}

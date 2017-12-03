@@ -34,25 +34,15 @@ class Section(Base):
 #many to one relationhip
 
 
-class Section(Base):
-    __tablename__ = 'Sections'
-    id = Column(Integer, primary_key=True)
-    section_number = Column(String(4))
-    professor_id = Column(Integer, ForeignKey('Professors.id'))
-    professor_name = relationship("Professor")
-    course_id = Column(Integer, ForeignKey('Courses.id'))
-    course_name = relationship("Course")
 
 
-class Professor(Base):
-    __tablename__ = 'Professors'
-    id = Column(Integer, primary_key=True)
-    professor_name = Column(String(15))
 
-class Course(Base):
-    __tablename__ = 'Courses'
-    id = Column(Integer, primary_key=True)
-    course_name = Column(String(15))
+
+
+
+
+#     TODO Need to implement these tables throughout the code so we can finish this project,
+#     TODO will need 3 jinja files view files 3 create files
 '''
 #many to many
 

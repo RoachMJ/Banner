@@ -1,0 +1,27 @@
+{% extends 'layout.jinja2' %}
+{% block content %}
+<p>
+
+</p>
+<div>
+    <h1>Professors</h1>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for professor in professor %}
+                <tr><td>{{professor}}</td></tr>
+        {% endfor %}
+{#    <% end %>#}
+  </tbody>
+</table>
+<p><a href="{{request.route_url('create_professor')}}">Create a Professor</a></p>
+</div>
+
+</div>
+
+{% endblock content %}

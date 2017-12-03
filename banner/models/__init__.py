@@ -6,8 +6,15 @@ import zope.sqlalchemy
 # import or define all models here to ensure they are attached to the
 # Base.metadata prior to any initialization routines
 #from .banner_models import Course, Professor, Section  # noqa
-from .page import Page
+#from .page import Page
 from .user import User
+from .course import Course
+from .section import Section
+from .professor import Professor
+
+
+# NOTE be sure to look at all resources and packages at https://trypyramid.com/resources-extending-pyramid.html
+
 
 # run configure_mappers after defining all of the models to ensure
 # all relationships can be setup
@@ -74,3 +81,5 @@ def includeme(config):
         'dbsession',
         reify=True
     )
+# TODO https://stackoverflow.com/questions/18938423/how-to-display-an-array-of-objects-in-page-template-in-pyramid
+# todo should get the ball rolling on displaying table data for banner

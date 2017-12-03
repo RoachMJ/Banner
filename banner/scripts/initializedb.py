@@ -16,7 +16,9 @@ from ..models import (
     get_tm_session,
     )
 #from ..models import Section, Professor, Course
-from ..models import Page, User
+from ..models import User
+from ..models import Course
+from ..models import Section
 
 def usage(argv):
     cmd = os.path.basename(argv[0])
@@ -41,17 +43,37 @@ def main(argv=sys.argv):
     with transaction.manager:
         dbsession = get_tm_session(session_factory, transaction.manager)
 
+        # TODO the following lines were added in order to get user and page tables to run on the server
+
+        # TODO NOTE we wont have to add anything into our database tables in this file for our banner models
+        # TODO values wont be created here they will be handled and processed in the app
+
+
+# the following lines hardcode a username and password for administrators-editor and users-basic
+        newsection = Section(number='0000', professor_id='1', course_id='1')
+        dbsession.add(newsection)
+
+        newcourse = Course(name='compsci')
+        dbsession.add(newcourse)
+
+
         editor = User(name='editor', role='editor')
         editor.set_password('editor')
+        dbsession.add(editor)
+
+        editor = User(name='climbingroach@gmail.com', role='editor')
+        editor.set_password('roaches')
         dbsession.add(editor)
 
         basic = User(name='basic', role='basic')
         basic.set_password('basic')
         dbsession.add(basic)
 
-        page = Page(
-            name='FrontPage',
-            creator=editor,
-            data='This is the front page',
-        )
-        dbsession.add(page)
+
+
+        # page = Page(
+        #     name='FrontPage',
+        #     creator=editor,
+        #     data='This is the front page',
+        # )
+        # dbsession.add(page)

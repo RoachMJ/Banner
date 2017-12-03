@@ -3,7 +3,7 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #ffffff;
-  background: #bc2131;
+  background: #7eb2bc;
 }
 h1,
 h2,
@@ -77,8 +77,11 @@ p {
   text-decoration: underline;
 }
 .starter-template .links ul li a:hover, a:hover {
-  color: #ffffff;
+  color: #000000;
   text-decoration: underline;
+}
+.starter-template .table-hover a:hover{
+  color: #000000;
 }
 .starter-template .links ul li .icon-muted {
   color: #eb8b95;

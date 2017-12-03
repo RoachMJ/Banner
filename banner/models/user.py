@@ -26,3 +26,7 @@ class User(Base):
             expected_hash = self.password_hash.encode('utf8')
             return bcrypt.checkpw(pw.encode('utf8'), expected_hash)
         return False
+
+
+
+    # TODO this is the database table creation point
